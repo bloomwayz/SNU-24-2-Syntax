@@ -1,0 +1,287 @@
+\documentclass[10pt]{article}
+\usepackage{kotex}
+\usepackage{mathpazo}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[linguistics]{forest}
+\usepackage[a4paper]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{microtype}
+
+\setlength{\droptitle}{-4em}
+
+\makeatletter
+\titleformat{\subsubsection}{\scshape\bfseries}{\thesection}{1em}{}
+\makeatother
+
+\geometry{
+ a4paper,
+ left=30mm,
+ right=30mm,
+ top=30mm,
+ bottom=30mm
+ }
+
+\forestset{default preamble={for tree={s sep=5mm, inner sep=2, l=0}}}
+
+\title{2024-2_Syntax_HW01}
+\author{이우성}
+\date{2024.10.10}
+
+\begin{document}
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+\title{2024-2 통사론 HW\#01 - commented}
+\author{언어학과 22 이우성}
+\maketitle
+\text{}
+\newline
+\subsubsection*{\textls[-50]{Q1  GPS8. Ambiguiuty II}}
+a) Alvina said Moises went to the store qiuickly.\\
+\newline
+1) \textit{"Moises went to the store qiuickly," Alvina said.}\\
+\begin{forest}
+[TP[NP[N\\Alvina]][VP[V\\said][CP[TP[NP[N\\Moises]][VP[V\\went][PP [P\\to][NP[D\\the][N\\store]]][AdvP[Adv\\quickly]]]]]]]
+\end{forest}
+\\
+\newline
+2) \textit{"Moises went to the store," Alvina said quickly.}\\
+\begin{forest}
+    [TP[NP[N\\Alvina]][VP[V\\said][CP[TP[NP[N\\Moises]][VP[V\\went][PP [P\\to][NP[D\\the][N\\store]]]]]][AdvP[Adv\\quickly]]]]
+\end{forest}
+\newpage
+\noindent
+d) Enraged cow injures farmer with ax\\
+\\
+3) \textit{Using an ax, an enraged cow injures a farmer.}\\
+\begin{forest}
+    [TP[NP[AdjP[Adj\\Enraged]][N\\cow]][VP[V\\injures][NP[N\\farmer]][PP[P\\with][NP[N\\ax]]]]]
+\end{forest}
+\\
+4) \textit{A farmer with an ax is injured by an enraged cow.}\\
+\begin{forest}
+    [TP[NP[AdjP[Adj\\Enraged]][N\\cow]][VP[V\\injures][NP[N\\farmer][PP[P\\with][NP[N\\ax]]]]]]
+\end{forest}
+\subsubsection*{\textls[-50]{Q2  CPS7. Using Constituency Tests}}
+\begin{spacing}{1.5}
+    \noindent
+    a) Juliet says that Romeo lies to his parents a lot.\\
+    (a)는 [$_{\text{AdvP}}$ [$_{\text{Adv}}$a lot]] 이 수식하는 VP의 핵이 무엇인지에 따라 다른 의미로 해석될 수 있다.\\
+    5) \textit{Juliet says a lot that Romeo lies to his parents.}
+\end{spacing}
+\noindent
+\begin{forest}
+    [TP[NP[N\\Juliet]][VP[V\\says][CP[C\\that][TP[NP[N\\Romeo]][VP[V\\lies][PP[P\\to][NP[D\\his][N\\parents]]]]]][AdvP[Adv\\a lot]]]]
+\end{forest}
+\newpage
+\begin{spacing}{1.3}
+    \noindent
+    6) \textit{"Romeo lies to his parents a lot," Juliet says.}
+\end{spacing}
+\noindent
+\begin{forest}
+    [TP[NP[N\\Juliet]][VP[V\\says][CP[C\\that][TP[NP[N\\Romeo]][VP[V\\lies][PP[P\\to][NP[D\\his][N\\parents]]][AdvP[Adv\\a lot]]]]]]]
+\end{forest}\\
+\noindent
+\newline
+\begin{spacing}{1.3}
+    \noindent
+    [$_{\text{AdvP}}$ [$_{\text{Adv}}$a lot]] 이 says 를 수식하는 경우, says를 핵으로 갖는 VP의 주체인 Juliet이 어떠한 발언을 많이 한다는 의미로 해석된다. 한편 [$_{\text{AdvP}}$ [$_{\text{Adv}}$a lot]] 이 lies 를 수식하면 주체는 Romeo가 되어 그가 거짓말을 많이 했다고 Juliet이 말한 것으로도 해석할 수 있다.\\
+    만일 아래와 같이 VP-preposing을 통해 [$_{\text{AdvP}}$ [$_{\text{Adv}}$a lot]]이 수식하는 동사를 단 하나로 제한해 보일 수 있다면 이러한 중의성은 해소된다.
+\end{spacing}
+\noindent
+\begin{spacing}{1.3}
+    \noindent
+    c) Lies to his parents a lot, Juliet says that Romeo does.\\
+\end{spacing}
+\noindent
+\begin{forest}
+    [VP$_{\text{i}}$[V\\lies][PP[P\\to][NP[D\\his][N\\parents]]][AdvP[Adv\\a lot]]]
+\end{forest} \qquad \begin{forest}
+    [TP[NP[N\\Juliet]][VP[V\\says][CP[C\\that][TP[NP[N\\Romeo]][VP[V$_{\text{i}}$\\does]]]]]]
+\end{forest}\\
+\newline
+\begin{spacing}{1.3}
+    \noindent
+    그러나 다음과 같이 VP-preposing을 하더라도 [$_{\text{AdvP}}$ [$_{\text{Adv}}$a lot]]이 prepose하려는 VP 안에 modifier로서 포함되지 못하는 경우에는 (a)와 같은 이유로 문장이 여전히 중의적인 의미를 갖게 된다.\\
+    \textcolor{red}{
+        b) Eat apples, Julian does everyday.\\
+        1. (b) 예시를 통해 VP-constituent에서 AdvP를 떼어내고 preposing 할 수 있음을 파악해야 함.\\
+        2. a lot이 says를 수식하는 경우에 이동이 불가능한 이유도 구체적으로 서술해야 함. (-1)\\}
+\end{spacing}
+\newpage
+\begin{spacing}{1.3}
+    \noindent
+    d) Lies to his parents, Juliet says that Romeo does a lot.
+\end{spacing}
+\begin{forest}
+    [VP$_{\text{j}}$[V\\lies][PP[P\\to][NP[D\\his][N\\parents]]]]
+\end{forest}\\
+    \begin{forest}
+        [TP, s sep=3mm [NP[N\\Juliet]][VP[V\\says][CP[C\\that][TP[NP[N\\Romeo]][VP[V$_{\text{j}}$\\does,name=tgt,tikz={\node [draw,ellipse,inner sep=-1pt, fit to=tree]{};}][,phantom][AdvP,name=src,tikz={\node [draw,ellipse,inner sep=-1pt, fit to=tree]{};}[Adv\\a lot]]]]]]]
+        \draw[->,>=stealth] (src) to[out=north east,in=north west] node[pos=0.5,yshift=3mm,xshift=15mm]{\textit{modifies}} (tgt);
+    \end{forest}
+    \begin{forest}
+        [TP, s sep=3mm [NP[N\\Juliet]][VP[V\\says,name=tgt,tikz={\node [draw,ellipse,inner sep=-1pt, fit to=tree]{};}][CP, l=10mm [C\\that][TP[NP[N\\Romeo]][VP[V$_{\text{j}}$\\does]]]][AdvP,l=10mm,name=src, tikz={\node [draw,ellipse,inner sep=-1pt, fit to=tree]{};}[Adv\\a lot]]]]
+        \draw[->,>=stealth] (src) to[out=north,in=north east] node[pos=0.5,yshift=3mm,xshift=15mm]{\textit{modifies}} (tgt);
+    \end{forest}
+\subsubsection*{\textls[-50]{Q3  CPS8. Leash and Clean up after your pet.}}
+\begin{spacing}{1.2}
+    \noindent
+    문제에서 준 조건에 따라 phransal verb \textit{clean up}을 하나의 V로 간주하고자 한다. Conjunction이 같은 통사범주에 속한 성분끼리만 일어날 수 있다는 점을 고려하면 동사인 \textit{leash}와 \textit{clean up}은 주어진 문장 내에서 \textit{and}을 매개로 연결된 것으로 보인다. 그러나 이러한 분석은 한 가지 의문을 남긴다. 이들을 개별적인 동사구 핵으로 간주했을 때 남은 성분들이 이루는 \textit{after your pets}가 \textit{leash}와 \textit{clean up} 각각에 직접 후행하는 두 개의 문장을 구성하면 전자는 비문, 후자는 정문이 되기 때문이다. 한편 preposition을 제거한 형태인 \textit{your pets}가 \textit{leash} 뒤에 후행하면 이 문장은 정문이 된다. 이는 \textit{after your pet}이 V를 modify하는 PP로서 기능하는 것이 아니라 \textit{after}가 \textit{clean up}과 결합하여 하나의 phrasal verb [$_{\text{V}}$ clean up after]를 이루고 [$_{\text{NP}}$ your pets]가 이 phrasal verb와 [$_{\text{V}}$ leash] 각각의 목적어로 기능할 수 있음을 암시한다. 때문에 preposition이 PP의 head로만 나타날 수 있는 현재까지의 PSR로는 \textit{your pets}가 \textit{leash}와 \textit{after} 모두의 목적어가 되는 tree를 그려낼 수 없다.\\\textcolor{blue}{leash에 후행하는 NP를 생략하는 방법으로도 설명할 수 있음(인정답안)}
+\end{spacing}
+\subsubsection*{\textls[-50]{Q4  GPS10. Draw a Tree}}
+\begin{forest}
+    for tree = {s sep=20mm}
+    [R[C[B]][D[F][E[G][H]]]]
+\end{forest}
+\subsubsection*{\textls[-50]{Q5  CPS2. Negative Polarity Items}}
+\noindent
+문제에서 준 자료 (a-f)를 bracketed diagram과 tree diagram으로 나타내면 다음과 같다.\\
+\newline
+\begin{spacing}{1.5}
+\noindent
+a) I didn't have any money.\\
+\noindent
+[$_{\text{TP}}$[$_{\text{NP}}$[$_{\text{N}}$I]][$_{\text{T}}$did][$_{\text{VP}}$[$_{\text{Neg}}$n't][$_{\text{V}}$have][$_{\text{NP}}$[$_{\text{D}}$any][$_{\text{N}}$money]]]]\\
+\end{spacing}
+\begin{forest}
+    [TP[NP[N\\I]][T\\did][VP[Neg\\n't, name=src,tikz={\node [draw,ellipse,inner sep=-1pt, fit to=tree]{};}][V\\have][NP, name=tgt,tikz={\node [draw,ellipse,inner sep=-1pt, fit to=tree]{};}[D\\any][N\\money]]]]
+    \draw[->,>=stealth] (src) to[out=north,in=north east] node[pos=0.5,yshift=3mm,xshift=15mm]{\textit{precedes, c-commands}} (tgt);
+\end{forest}\\
+\newline
+\begin{spacing}{1.5}
+\noindent
+b) *I had any money.\\
+\noindent
+$^*$[$_{\text{TP}}$[$_{\text{NP}}$[$_{\text{N}}$I]][$_{\text{VP}}$[$_{\text{V}}$had][$_{\text{NP}}$[$_{\text{D}}$any][$_{\text{N}}$money]]]]\\
+\end{spacing}
+\begin{forest}
+    [$^*$TP[NP[N\\I]][VP[V\\had][NP[D\\any][N\\money]]]]
+\end{forest}\\
+\newline
+\begin{spacing}{1.5}
+\noindent
+\newpage
+\noindent
+c) I didn't read a single book the whole time I was in the library.\\
+\noindent
+[$_{\text{TP}}$[$_{\text{NP}}$[$_{\text{N}}$I]][$_{\text{T}}$did][$_{\text{VP}}$[$_{\text{Neg}}$n't][$_{\text{V}}$read][$_{\text{NP}}$a single book][$_{\text{AdvP}}$the whole time I was in the library]]]\\
+\end{spacing}
+\begin{forest}
+    [TP[,phantom][NP,l=5mm[N\\I]][T\\did,l=5mm,before computing xy={s/.average={s}{siblings}}][VP, l=10mm[Neg\\n't,name=src,tikz={\node [draw,ellipse,inner sep=-1pt, fit to=tree]{};},l=10mm][,phantom][,phantom][V\\read,l=10mm][NP,l=10mm,name=tgt,tikz={\node [draw,ellipse,inner sep=-1pt, fit to=tree]{};} [a single book, roof]][AdvP,l=10mm[the whole time I was in the library., roof]]]]
+    \draw[->,>=stealth] (src) to[out=south,in=south west] node[pos=0.5,yshift=-3mm,xshift=-10mm]{\textit{precedes, c-commands}} (tgt);
+\end{forest}\\
+\newline
+\begin{spacing}{1.5}
+\noindent
+d) *I read a single book the whole time I was in the library.\\
+$^*$[$_{\text{TP}}$[$_{\text{NP}}$[$_{\text{N}}$I]][$_{\text{VP}}$[$_{\text{V}}$read][$_{\text{NP}}$a single book][$_{\text{AdvP}}$the whole time I was in the library]]]\\
+\end{spacing}
+\begin{forest}
+    [$^*$TP[NP[N\\I]][VP[,phantom][V\\read, l=10mm][NP,before computing xy={s/.average={s}{siblings}}, l=10mm [a single book, roof]][AdvP, l=10mm[the whole time I was in the library., roof]]]]
+\end{forest}\\
+\newline
+\begin{spacing}{1.5}
+\noindent
+e) I did not have any money.\\
+\noindent
+[$_{\text{TP}}$[$_{\text{NP}}$[$_{\text{N}}$I]][$_{\text{T}}$did][$_{\text{VP}}$[$_{\text{Neg}}$not][$_{\text{V}}$have][$_{\text{NP}}$[$_{\text{D}}$any][$_{\text{N}}$money]]]]\\
+\end{spacing}
+\begin{forest}
+    [TP[NP[N\\I]][T\\did][VP[Neg\\not,name=src,tikz={\node [draw,ellipse,inner sep=-1pt, fit to=tree]{};}][V\\have][NP,name=tgt,tikz={\node [draw,ellipse,inner sep=-1pt, fit to=tree]{};}[D\\any][N\\money]]]]
+    \draw[->,>=stealth] (src) to[out=north,in=north east] node[pos=0.5,yshift=3mm,xshift=15mm]{\textit{precedes, c-commands}} (tgt);
+\end{forest}\\
+\newpage
+\begin{spacing}{1.5}
+\noindent
+f) *Any money was not found in the box.\\
+$^*$[$_{\text{TP}}$[$_{\text{NP}}$[$_{\text{D}}$Any][$_{\text{N}}$money]][$_{\text{T}}$was][$_{\text{VP}}$[$_{\text{Neg}}$not][$_{\text{V}}$found][$_{\text{PP}}$[$_{\text{P}}$in][$_{\text{NP}}$[$_{\text{D}}$the][$_{\text{N}}$box]]]]]\\
+\end{spacing}
+\begin{forest}
+    [$^*$TP[NP,name=tgt,tikz={\node [draw,ellipse,inner sep=-1pt, fit to=tree]{};}[D\\Any][N\\money]][T\\was][VP[Neg\\not,name=src,tikz={\node [draw,ellipse,inner sep=-1pt, fit to=tree]{};}][V\\found][PP[P\\in][NP[D\\the][N\\box]]]]]
+    \draw[dashed,gray,->,>=stealth] (src) to[out=south west,in=south] node[pos=0.5,yshift=-5mm,xshift=15mm]{\textit{does not precedes or c-commands}} (tgt);
+\end{forest}\\
+\newline
+\noindent
+이상의 주어진 자료를 근거로 다음과 같은 두 가지 가설을 수립할 수 있다.
+\begin{tabbing}
+00\=11 \=2 \kill
+\>i)  \>Neg가 NPI에 precede해야 한다.\\
+\>ii) \>Neg가 NPI를 (symmetrically) c-command해야 한다.\\
+\end{tabbing}
+이제 자료 (g)를 검토하여 두 가지 가설 중 하나를 채택하고자 한다.\\
+\newline
+\begin{spacing}{1.5}
+\noindent
+g) *The man that Susan didn't like had any money.\\
+$^*$[$_{\text{TP}}$[$_{\text{NP}}$[$_{\text{D}}$The][$_{\text{N}}$man][$_{\text{CP}}$[$_{\text{C}}$that][$_{\text{TP}}$[$_{\text{NP}}$[$_{\text{N}}$Susan]][$_{\text{T}}$did][$_{\text{VP}}$[$_{\text{Neg}}$not][$_{\text{V}}$like]]]]][$_{\text{VP}}$[$_{\text{V}}$had][$_{\text{NP}}$[$_{\text{D}}$any][$_{\text{N}}$money]]]]\\
+\end{spacing}
+\begin{forest}
+        [$^*$TP[NP[D\\The][N\\man][CP[C\\that][TP[NP[N\\Susan]][T\\did][VP[Neg\\not,name=src,tikz={\node [draw,ellipse,inner sep=-1pt, fit to=tree]{};}][V\\like]]]]][VP[V\\had][NP,name=tgt,tikz={\node [draw,ellipse,inner sep=-1pt, fit to=tree]{};}[D\\any][N\\money]]]]
+        \draw[->,>=stealth] (src) to[out=south,in=east] node[pos=0.5,yshift=0mm,xshift=30mm]{\textit{precedes but does not c-command}} (tgt);
+\end{forest}\\
+\begin{spacing}{1.5}
+\noindent
+Neg가 NPI에 precede함에도 불구하고 이 문장은 비문이 된다. 이로부터 Neg가 NPI를 precede하는 것만으로는 충분치 않고 c-command하는 관계에 있어야 함을 확인하였다. 따라서 가설 (ii)가 유지된다.    
+\end{spacing}
+\newpage
+\subsubsection*{\textls[-50]{Q6  CPS2. Binding Domain}}
+\noindent
+Binding domain의 정의와 현재까지 확인된 세 가지 Binding Principle은 다음과 같다.
+\begin{tabbing}
+    00000\=11 \=2 \kill
+    x)\>\textit{\textbf{Binding Domain}}: The clause containing the NP.\\
+    \\
+    xii)\>\textit{\textbf{The Binding Principles}}\\
+    \>\textit{Principle A}: An anaphor must be bound in its binding domain.\\
+    \>\textit{Principle B}: A pronoun must be free in its binding domain.\\
+    \>\textit{Principle C}: An R-expression must be free.\\
+\end{tabbing}
+Principle B에 의하면 pronoun은 그것이 포함된 (minimal) TP 안에서 bound되어서는 안 된다.\\
+\newline
+\textbf{Andy}$_{\text{i}}$ dismayed [\textbf{his}$_{\text{i}}$ father]$_{\text{m}}$.\\
+\newline
+\begin{spacing}{1.5}
+\noindent
+his$_{\text{i}}$는 주어인 Andy$_{\text{i}}$를 antecedent로 취하는 possessive pronoun이다. 그러나 이를 용어 그대로 pronoun으로 분류하면 Binding Principle에 의해 모순이 발생한다. Andy$_{\text{i}}$가 his$_{\text{i}}$를 bind하고 있는데 이는 pronoun이 binding domain에서 free여야 한다는 Principle B에 위배되며, 이 이론에 따르면 위 문장은 비문으로 판정되어야 한다. 이러한 모순은 현재의 이론이 possessive pronoun의 출현 조건을 밝히기에 충분치 않으며 binding 혹은 pronoun의 재정의가 필요함을 보여준다. \\
+\end{spacing}
+\subsubsection*{\textls[-50]{Q7  CPS4. Japanese}}
+\noindent
+a) Kazukowa$_{\text{i}}$ [$_{\text{CP}}$ [$_{\text{TP}}$ Tarooga$_{\text{k}}$ zibunzisino$_{\text{k/$^{*}$i}}$ hihansta][$_{\text{C}}$to]] itta.\\
+\newline
+\begin{spacing}{1.5}
+\noindent
+\textit{Question 1}: On the basis of only the data in (a) is \textit{zibunzisin} an anaphor or a pronoun? How can you tell?\\
+문제에서 준 접사에 관한 조건에 의하면 Tarooga 는 zibunzisino을 c-command한다. 이 두 NP는 k로써 coindexed되어야만 문법성을 만족하며, zibunzisin의 binding domain 바깥에 있는 NP의 index i가 부여되면 비문이 된다. 즉 embedded clause 안에서 Tarooga는 zibunzisino를 bind하여야 한다. 만일 zibunzisin이 pronoun이라면 이는 Principle B에 위배되는 반면 zibunzisin이 anaphor라면 주어진 구조는 Principle A를 준수하여 정문이 된다. 따라서 현재까지의 기준으로 미루어 볼 때 zibunzisin은 anaphor에 해당하는 것으로 보인다.\\
+\end{spacing}
+\noindent
+b) Kazukowa$_{\text{i}}$ [$_{\text{CP}}$ [$_{\text{TP}}$ zibunzisinga$_{\text{i}}$ Tarooo korosita] [$_{\text{C}}$  to]] omotteiru.\\
+\newline
+\begin{spacing}{1.5}
+\noindent
+\textit{Question 2}: Given this additional evidence, do you need to revise your hypothesis from question 1? Is \textit{zibunzisin} an anaphor, a pronoun or something else entirely? How can you tell?\\
+(b)에서는 zibunzisinga가 binding domain--embedded clause 안--에서 free이다. 때문에 zibunzisin이 anaphor의 지위를 갖추고 있다고 보면 이는 Principle A에 위배된다. 또한 zibunzisin은 embedded clause 바깥의 NP Kazukowa$_{\text{i}}$ 와 coindexed되었으므로, 같은 개체를 binding domain 바깥의 NP와 corefer하는 것을 허용하는 pronoun의 성격을 띄고 있다. 이는 (a)에서의 관찰과 충돌하며 현재까지의 이론으로는 zibunzisin이 anaphor와 pronoun 중 어느 하나라고 단정 지을 수 없게 된다.\\
+\textcolor{red}{“그럼 무엇?”: zibunzisin이 주어로 있느냐 목적어로 있느냐에 따라 경우를 구분지어 역할이 바뀐다는 사실을 구체적으로 서술했어야 함. (-2)\\}
+\end{spacing}
+\noindent
+c) $^*$Kazukowa$_{\text{i}}$ [$_{\text{CP}}$ [$_{\text{TP}}$ zibunzisinga$_{\text{k}}$ Tarooo$_{\text{k}}$ korosita] [$_{\text{C}}$  to]] omotteiru.\\
+\newline
+\begin{spacing}{1.5}
+\noindent
+\textit{Question 3}: Sentence (c) is a violation of which binding principle? (A, B, or C?) Which NP is binding which other NP in this sentence to cause the ungrammaticality?\\
+Embedded clause 안의 NP Tarooo는 현실의 인물을 지칭하는 R-expression으로서 Principle C에 의해 조건 없이 free여야 한다. 그러나 문제에서 준 접사 조건에 의하면 zibunzisinga는 Tarooo를 c-command 하며 이 두 NP는 k로 coindexed되어 있다. 따라서 zibunzisinga가 Tarooo를 bind함으로써 (c)는 Principle C를 위배, 비문이 된다.\\
+\end{spacing}
+% --------------------------------------------------------------
+%   name=src,tikz={\node [draw,ellipse,inner sep=-1pt, fit to=tree]{};}
+%   name=tgt,tikz={\node [draw,ellipse,inner sep=-1pt, fit to=tree]{};}
+%   \draw[->,>=stealth] (src) to[out=north,in=north east] node[pos=0.5,yshift=3mm,xshift=15mm]{\textit{modifies}} (tgt);  
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}
