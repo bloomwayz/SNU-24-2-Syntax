@@ -17,6 +17,7 @@ If you compile the Typst codes, please make sure that the followings are ready b
 - Fonts (can be downloaded in [KOPUS](https://www.kopus.org/biz-electronic-font2/))
   - Title: KoPubWorld Dotum Pro (Bold, Medium)
   - Paragraph: KoPubWorld Batang Pro (Bold, Light)
-If you work in your local environment, the additional fonts should be installed. [Online compiler](https://typst.app) users can ignore.
+
+If you work in your local environment, the additional fonts should be installed. [Online compiler](https://typst.app) users can ignore this.
 - Linux Biolinum
 - Linux Libertine
