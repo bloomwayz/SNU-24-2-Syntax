@@ -9,8 +9,8 @@
 ## 🔨 About Us
 통사론 저장소는 [박준영](https://github.com/bloomwayz)과 [이우성](https://github.com/HiTechFullOn)이 공동으로 운영하고 있습니다. \
 두 사람이 각자 개인 폴더에 파일을 업로드하고 있으니, 개인 폴더를 참조해 주세요.
-- 박준영: [SNU-24-2-Syntax/bloomwayz](SNU-24-2-Syntax/bloomwayz)
-- 이우성: [SNU-24-2-Syntax/cosmosplendor](SNU-24-2-Syntax/cosmosplendor)
+- 박준영: [SNU-24-2-Syntax/bloomwayz](./bloomwayz)
+- 이우성: [SNU-24-2-Syntax/cosmosplendor](./cosmosplendor)
 
 ## 🔗 Contributing
 저희는 통사론 저장소에 기여하실 분을 상시 모집하고 있습니다!
