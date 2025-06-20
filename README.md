@@ -1,10 +1,10 @@
 # SNU Linguistics 108.315 Syntax
-2024년 2학기 서울대학교 '통사론' 강좌의 과제 파일 모음입니다.
+2024학년도 2학기 서울대학교 '통사론' 강좌의 과제 파일 모음입니다.
 
 ## 👨‍🏫 Course Info.
 - **시간**: 매주 화요일, 목요일 12:30~13:45
 - **장소**: 6-105
-- **교수**: 박동우
+- **교수**: [박동우](https://sites.google.com/knou.ac.kr/dongwoop/home)
 
 ## 🔨 About Us
 통사론 저장소는 [박준영](https://github.com/bloomwayz)과 [이우성](https://github.com/HiTechFullOn)이 공동으로 운영하고 있습니다. \
